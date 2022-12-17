@@ -1,23 +1,21 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import NavItem from '../components/nav/NavItem'
-import Nav from '../components/nav/Nav2.jsx'
-import ContactSection from '../components/contact/contact'
-import Footer from '../components/footer/footer'
+import NavItem from '../../components/nav/NavItem'
+import Nav from '../../components/nav/Nav2.jsx'
+import ContactSection from '../../components/contact/contact'
 import Link from 'next/link'
 import { useState, useEffect } from 'react'
-import CONF from '../config/site.config.json'
+import CONF from '../../config/site.config.json'
 
 
 let topTool = CONF.homepage.topTools;
-let myWork = CONF.homepage.myWork;
 
 function Icon({ children }) {
   return <div className={` text-7xl `}>{children}</div>
 }
 
 function HeaderContent() {
-  let headPart = CONF.pages['home']
+  let headPart = CONF.pages['about']
   return (
     <Head>
       <title>{headPart.title}</title>
@@ -53,8 +51,33 @@ export default function Home() {
         <div >
           <div className="container px-10 py-9 mx-auto flex flex-wrap flex-col md:flex-row ">
             {/**--Left Col**/}
-            <div className={`w-full md:w-6/12 py-6 text-center`}>
-              <Image className={`w-full md:w-4/5 z-70 transition hover:blur-sm delay-500 ease-in-out `} style={{ rotate: `${degr}deg` }} src="/roll.svg" alt='Hero' width={100} height={100} />
+            <div className={`w-full md:w-6/12 py-6 `}>
+              <div className="  rounded-md border px-3 py-2 m-10 flex flex-col flex-grow flex-shrink focus:outline-none focus:shadow-outline transform transition hover:shadow-xl  duration-300 ease-in-out ">
+
+                <form className="bg-white rounded px-8 pt-6 pb-8 mb-4">
+                  <div className="mb-4">
+                    <label className="block text-gray-700 text-sm font-bold mb-2" for="username">
+                      Name
+                    </label>
+                    <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Username" />
+                  </div>
+                  <div className="mb-6">
+                    <label className="block text-gray-700 text-sm font-bold mb-2" for="password">
+                      Password
+                    </label>
+                    <input className="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="password" type="password" placeholder="******************" />
+                    <p className="text-red-500 text-xs italic">Please choose a password.</p>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
+                      Sign In
+                    </button>
+                    <a className="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="#">
+                      Forgot Password?
+                    </a>
+                  </div>
+                </form>
+              </div>
             </div>
 
             {/**--Right Col**/}
@@ -75,9 +98,9 @@ export default function Home() {
         </div>
 
         {/* tools section */}
-        <section className="container mx-auto  p-6  mb mt-10 mb-15">
+        <section className="container mx-auto  p-6  mb mt-28 mb-28">
 
-          <h3 className=" text-4xl text-center leading-tight">
+          <h3 className="my-4 text-4xl text-center leading-tight">
             Top Tools 🛠
           </h3>
           <div className="container  px-3 mx-auto flex flex-wrap sm:flex-wrap gap-4 pt-20 pb-6 ">
@@ -116,41 +139,16 @@ export default function Home() {
 
         </section>
 
-        {/* tools section */}
-        <section className="container mx-auto  p-6  mb mt-5 mb-15">
-
-          <h3 className=" text-4xl text-center leading-tight">
-            My Figma Works 🖋
-          </h3>
-          <div className="container  mx-auto flex flex-wrap sm:flex-wrap gap-4 pt-20 pb-6 ">
-            {
-              myWork.map((d, i) =>
-                <div key={i} className="   rounded-2xl  shadow-lg    lg:w-1/6 md:w-2/6  flex flex-col flex-grow flex-shrink  transform transition hover:shadow-xl hover:scale-105 duration-300 ease-in-out ">
-                 <Image alt={d.alt} style={{height:'100%'}} className='' width={1200} height={800} src={d.imgSrc}/>
-                 <div className="py-3 text-center">
-                  <p>{d.alt}</p>
-                 </div>
-                </div>
-              )
-            }
-          </div>
-          <center>
-            <Link href={'#'}>
-              <button className="mx-auto  text-center lg:mx-0 hover:underline  text-black rounded mb-6 mt-4  focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
-                Show All 😎...
-              </button>
-            </Link>
-          </center>
-
-        </section>
-
         {/* contact me section */}
         <ContactSection/>
 
-
-
         {/**--Footer**/}
-        <Footer/>
+
+        <footer className="border border-t-gray-200 p-6 text-center">
+          <h2 className=' text-xl '>Made with ❤</h2>
+
+        </footer>
+
       </div>
     </>
   )

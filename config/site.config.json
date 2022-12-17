@@ -1,0 +1,88 @@
+{
+  "urls": [
+    {
+      "slug": "",
+      "title": "Home",
+      "titleData": "Home",
+      "url": "/"
+    },
+    {
+      "slug": "about",
+      "title": "About",
+      "titleData": "About",
+      "url": "/about"
+    },
+    {
+      "slug": "tools",
+      "title": "Tools",
+      "titleData": "Tools",
+      "url": "/tools"
+    },
+    {
+      "slug": "blog",
+      "title": "Blog",
+      "titleData": "Blog",
+      "url": "/blog"
+    }
+  ],
+  "homepage": {
+    "topTools": [
+      {
+        "head": "Japa Tool",
+        "content": "This is virtual Japa application. You can use it anywhere one the Go. Good Part:: This can be use offline.",
+        "url": "#",
+        "type": "🧘‍♀️ Self Help",
+        "tagColor": "bg-yellow-200"
+      },
+      {
+        "head": "Japa Tool",
+        "content": "This is virtual Japa application. You can use it anywhere one the Go. Good Part:: This can be use offline.",
+        "url": "#",
+        "type": "🧘‍♀️ Self Help",
+        "tagColor": "bg-yellow-200"
+      },
+      {
+        "head": "Japa Tool",
+        "content": "This is virtual Japa application. You can use it anywhere one the Go. Good Part:: This can be use offline.",
+        "url": "#",
+        "type": "🧘‍♀️ Self Help",
+        "tagColor": "bg-yellow-200"
+      }
+    ],
+    "myWork": [
+      {
+        "imgSrc": "/work/work-1.svg",
+        "alt": "Death stranding sooraj sahu work 1"
+      },      {
+        "imgSrc": "/work/work-2.svg",
+        "alt": "Death stranding sooraj sahu work 2"
+      },      {
+        "imgSrc": "/work/work-4.svg",
+        "alt": "Death stranding sooraj sahu work 3"
+      }
+    ]
+  },
+  "themeColor": "#fde047",
+  "pages": {
+    "home": {
+      "title": "Home 🏡| Suraj sahu",
+      "description": "Home",
+      "ogContent": "Home"
+    },
+    "about": {
+      "title": "About Me 😎",
+      "description": "About",
+      "ogContent": "About"
+    },
+    "tools": {
+      "title": "Tools 🛠",
+      "description": "Tools",
+      "ogContent": "Tools"
+    },
+    "blog": {
+      "title": "Blog ✍",
+      "description": "Blog",
+      "ogContent": "Blog"
+    }
+  }
+}

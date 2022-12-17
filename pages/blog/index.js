@@ -1,28 +1,27 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import NavItem from '../components/nav/NavItem'
-import Nav from '../components/nav/Nav2.jsx'
-import ContactSection from '../components/contact/contact'
-import Footer from '../components/footer/footer'
+import NavItem from '../../components/nav/NavItem'
+import Nav from '../../components/nav/Nav2.jsx'
+import ContactSection from '../../components/contact/contact'
+import Footer from '../../components/footer/footer'
 import Link from 'next/link'
 import { useState, useEffect } from 'react'
-import CONF from '../config/site.config.json'
+import CONF from '../../config/site.config.json'
 
 
 let topTool = CONF.homepage.topTools;
-let myWork = CONF.homepage.myWork;
 
 function Icon({ children }) {
   return <div className={` text-7xl `}>{children}</div>
 }
 
 function HeaderContent() {
-  let headPart = CONF.pages['home']
-  return (
-    <Head>
-      <title>{headPart.title}</title>
-      <meta name="description" content={headPart.description} />
-    </Head>)
+  let headPart = CONF.pages['blog']
+  return(
+  <Head>
+    <title>{headPart.title}</title>
+    <meta name="description" content={headPart.description} />
+  </Head>)
 }
 
 
@@ -41,7 +40,7 @@ export default function Home() {
 
   return (
     <>
-      <HeaderContent />
+      <HeaderContent/>
       <div className="leading-normal tracking-normal font-Oswald  bg-white" >
         <Nav>
           {
@@ -75,9 +74,9 @@ export default function Home() {
         </div>
 
         {/* tools section */}
-        <section className="container mx-auto  p-6  mb mt-10 mb-15">
+        <section className="container mx-auto  p-6  mb mt-28 mb-28">
 
-          <h3 className=" text-4xl text-center leading-tight">
+          <h3 className="my-4 text-4xl text-center leading-tight">
             Top Tools 🛠
           </h3>
           <div className="container  px-3 mx-auto flex flex-wrap sm:flex-wrap gap-4 pt-20 pb-6 ">
@@ -116,41 +115,12 @@ export default function Home() {
 
         </section>
 
-        {/* tools section */}
-        <section className="container mx-auto  p-6  mb mt-5 mb-15">
-
-          <h3 className=" text-4xl text-center leading-tight">
-            My Figma Works 🖋
-          </h3>
-          <div className="container  mx-auto flex flex-wrap sm:flex-wrap gap-4 pt-20 pb-6 ">
-            {
-              myWork.map((d, i) =>
-                <div key={i} className="   rounded-2xl  shadow-lg    lg:w-1/6 md:w-2/6  flex flex-col flex-grow flex-shrink  transform transition hover:shadow-xl hover:scale-105 duration-300 ease-in-out ">
-                 <Image alt={d.alt} style={{height:'100%'}} className='' width={1200} height={800} src={d.imgSrc}/>
-                 <div className="py-3 text-center">
-                  <p>{d.alt}</p>
-                 </div>
-                </div>
-              )
-            }
-          </div>
-          <center>
-            <Link href={'#'}>
-              <button className="mx-auto  text-center lg:mx-0 hover:underline  text-black rounded mb-6 mt-4  focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
-                Show All 😎...
-              </button>
-            </Link>
-          </center>
-
-        </section>
-
-        {/* contact me section */}
-        <ContactSection/>
-
-
+       {/* contact me section */}
+       <ContactSection/>
 
         {/**--Footer**/}
         <Footer/>
+
       </div>
     </>
   )
