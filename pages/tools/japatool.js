@@ -3,7 +3,6 @@ import Image from 'next/image'
 import NavItem from '../../components/nav/NavItem'
 import Nav from '../../components/nav/Nav2.jsx'
 import Link from 'next/link'
-import { useState, useEffect } from 'react'
 import ContactSection from '../../components/contact/contact'
 import Footer from '../../components/footer/footer'
 import CONF from '../../config/site.config.json'
@@ -44,7 +43,7 @@ export default function JapaTool() {
         <section className="container mx-auto  p-6  mb mt-2 mb-28">
 
           <h3 className="my-4 text-6xl text-center leading-tight">
-            Tools 🛠
+            Japa App 🧘‍♀️📿
           </h3>
           <div className="container  px-3 mx-auto flex flex-wrap sm:flex-wrap gap-4 pt-20 pb-6 ">
             {

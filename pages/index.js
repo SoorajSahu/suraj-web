@@ -4,6 +4,7 @@ import NavItem from '../components/nav/NavItem'
 import Nav from '../components/nav/Nav2.jsx'
 import ContactSection from '../components/contact/contact'
 import Footer from '../components/footer/footer'
+import { ToolCard } from '../components/cards/index'
 import Link from 'next/link'
 import { useState, useEffect } from 'react'
 import CONF from '../config/site.config.json'
@@ -83,31 +84,12 @@ export default function Home() {
           <div className="container  px-3 mx-auto flex flex-wrap sm:flex-wrap gap-4 pt-20 pb-6 ">
             {
               topTool.map((d, i) =>
-                <div key={i} className="  rounded-md border px-3 py-2 lg:w-1/6 md:w-2/6  flex flex-col flex-grow flex-shrink focus:outline-none focus:shadow-outline transform transition hover:shadow-xl hover:scale-105 duration-300 ease-in-out ">
-
-                  <div className={` rounded-xl   hover:opacity-100 `}>
-
-                    <h1 className="text-4lg text-black mb-3 uppercase ">Japa Tool</h1>
-                    <p className='text-gray-600 leading-6 line-clamp-3'>{d.content}</p>
-                    <br />
-                    <div className="text-xs">
-                      <span className={`mt-4 border rounded-full ${d.tagColor} p-1`}>{d.type}</span>
-                    </div>
-                    <div className="border-b  mt-4 "></div>
-                    <Link href={'#'}>
-                      <button className="py-1 px-4  border border-yellow-400 font-semibold mt-5 rounded-md transition hover:bg-yellow-400 text-black duration-300 ease-in-out " >
-                        Go &rarr;
-                      </button>
-                    </Link>
-
-
-                  </div>
-                </div>
+                <ToolCard key={i} url={d.url} content={d.content} head={d.head} tagColor={d.tagColor} type={d.type}/>
               )
             }
           </div>
           <center>
-            <Link href={'#'}>
+            <Link href={'/tools'}>
               <button className="mx-auto  text-center lg:mx-0 hover:underline  text-black rounded mb-6 mt-4  focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
                 Show All 👽...
               </button>
